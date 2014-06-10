@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MyScene.h"
+#import "GameScene.h"
 
 @implementation ViewController
 
@@ -17,11 +17,11 @@
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
     
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
@@ -30,6 +30,10 @@
 
 - (BOOL)shouldAutorotate
 {
+    return YES;
+}
+
+- (BOOL)prefersStatusBarHidden {
     return YES;
 }
 
